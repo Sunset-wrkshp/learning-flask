@@ -8,7 +8,8 @@ html, body, h1 {
 }
 
 body {
-  background-color: #f4f4f4;
+  /*background-color: #f4f4f4;*/
+  background-color: #ffd7fb;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -86,10 +87,6 @@ a {
   text-transform: uppercase;
 }
 
-/*
- * Extra
- */
-
 
 header {
   background-color: #fff;
@@ -141,6 +138,7 @@ header {
 }
 
 .hero-section .section-content h2 {
+  text-align: center;
   font-size: 40px;
 }
 
@@ -300,11 +298,13 @@ header {
 }
 
 .thin-shade {
-  background: #febaf9;
-  font: italic 1.5rem 'Helvetica', sans-serif;
+  background: #ffd9fc;
+  font: italic 6rem 'Helvetica', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.35rem;
   color: #ff95f8;
   text-shadow: -4px 4px 0 #ffffff,
                       -6px 6px 0 rgba(255, 255, 255, 1);
+  position: relative;
+  right: 125px;
 }
