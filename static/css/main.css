@@ -298,7 +298,7 @@ header {
 }
 
 .thin-shade {
-  background: #ffd9fc;
+  /*background: #ffd9fc;*/
   font: italic 6rem 'Helvetica', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.35rem;
@@ -307,4 +307,8 @@ header {
                       -6px 6px 0 rgba(255, 255, 255, 1);
   position: relative;
   right: 125px;
+  /*background-image: url("../img/[ S H I T-posT~~].png");*/
+  background-image: url("http://i0.kym-cdn.com/photos/images/original/000/900/116/c23.jpg");
+  background-position: 5% 15%;
+
 }
