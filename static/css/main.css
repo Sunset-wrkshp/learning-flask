@@ -1,6 +1,6 @@
 /*
  * General
- */
+*/
 
 html, body, h1 {
   margin: 0;
@@ -50,6 +50,7 @@ a {
 .section-device {
   float: right;
   position: relative;
+  left: 100px;
   top: 65px;
 }
 
@@ -85,11 +86,10 @@ a {
   text-transform: uppercase;
 }
 
-
-
 /*
- * Header
+ * Extra
  */
+
 
 header {
   background-color: #fff;
@@ -285,4 +285,26 @@ header {
 
 .leaflet-popup-content p {
   margin: 10px 0 ;
+}
+
+/*
+ * Extra
+ */
+
+.fancy {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 50px;
+  color: #ff6ffe;
+}
+
+.thin-shade {
+  background: #febaf9;
+  font: italic 1.5rem 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  color: #ff95f8;
+  text-shadow: -4px 4px 0 #ffffff,
+                      -6px 6px 0 rgba(255, 255, 255, 1);
 }
