@@ -5,12 +5,24 @@ from forms import SignupForm
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+POSTGRES = {
+    'user': 'postgres',
+    'pw': 'furrydicks65',
+    'db': 'learningflask',
+    'host': 'localhost',
+    'port': '5432',
+}
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(user)s:\
+%(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:furrydicks65@localhost/learningflask'
 db.init_app(app)
 
 app.secret_key = "development-key"
 
 #URL CSS thing
+#CSS data would be stored in cache and would not update immediately.
 @app.context_processor
 def override_url_for():
     return dict(url_for=dated_url_for)
@@ -23,6 +35,7 @@ def dated_url_for(endpoint, **values):
                                      endpoint, filename)
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
+#end URL CSS problem
 
 @app.route("/")
 def index():
@@ -50,9 +63,9 @@ def signup():
         if form.validate() == False:
             return render_template('signup.html', form=form)
         else:
-            #newuser = User(form.first_name.data, form.last_name.data, form.email.data, form.password.data)
-            #db.session.add(newuser)
-            #db.session.commit()
+            newuser = User(form.first_name.data, form.last_name.data, form.email.data, form.password.data)
+            db.session.add(newuser)
+            db.session.commit()
             return "Success"
     elif request.method == 'GET':
         return render_template('signup.html', form = form )
